@@ -1,0 +1,10 @@
+<h1>Viewing Party</h1>
+
+<%= button_to "Create New User", "/register", method: :get %>
+
+<div class="existing-users">
+  <h3>Existing Users</h3>
+  <% @users.each do |user| %>
+    <%= link_to "#{user.email}", user_path(user) %>
+  <% end %>
+</div>
