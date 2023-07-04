@@ -11,4 +11,8 @@
 
 ## Test Coverage
 
+### Co-Author Information
+Commit Message ...
 
+
+Co-authored-by: name <name@example.com>
