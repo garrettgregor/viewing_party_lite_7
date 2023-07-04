@@ -1,5 +1,5 @@
-class UsersController < ApplicationController
-  def new
+# frozen_string_literal: true
 
-  end
+class UsersController < ApplicationController
+  def new; end
 end
