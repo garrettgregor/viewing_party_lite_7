@@ -15,4 +15,5 @@
 Commit Message ...
 
 
-Co-authored-by: name <name@example.com>
+Co-authored-by: Michael Callahan <mcalla242@gmail.com>
+Co-authored-by: Garrett Gregor <garrett.gregor@gmail.com>

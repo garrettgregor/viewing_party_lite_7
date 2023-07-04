@@ -1,0 +1,8 @@
+require: rubocop-rails
+
+Rails/FindBy:
+  Exclude:
+    - app/helpers/application_helper.rb
+
+Style/Documentation:
+  Enabled: false
