@@ -73,4 +73,5 @@ group :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'shoulda-matchers'
 end
