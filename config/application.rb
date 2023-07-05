@@ -36,9 +36,11 @@ module ViewingPartyLite7
     # Don't generate system test files.
     config.generators.system_tests = nil
 
+    # :nocov:
     config.generators.after_generate do |files|
       parsable_files = files.filter { |file| file.end_with?('.rb') }
       system("bundle exec rubocop -A --fail-level=E #{parsable_files.shelljoin}", exception: true)
     end
+    # :nocov:
   end
 end
