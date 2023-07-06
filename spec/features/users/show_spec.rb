@@ -15,7 +15,7 @@ RSpec.describe '/users/:id', type: :feature do
       expect(page).to have_content("#{user1.name}'s Dashboard")
       expect(page).to_not have_content("#{user2.name}'s Dashboard")
     end
-    
+
     it 'has a css class with a button to discover movies' do
       within '.discover-movies' do
         click_button 'Discover Movies'
@@ -23,7 +23,7 @@ RSpec.describe '/users/:id', type: :feature do
         expect(current_path).to eq(user_discover_index_path(user1))
       end
     end
-    
+
     it 'has a css class that lists a users viewing parties' do
       expect(page).to have_css '.viewing-parties'
     end

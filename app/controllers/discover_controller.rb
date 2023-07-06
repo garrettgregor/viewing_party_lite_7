@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
 class DiscoverController < ApplicationController
-  def index
-    
-  end
+  def index; end
 end
