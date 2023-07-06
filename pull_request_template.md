@@ -15,5 +15,5 @@
 Commit Message ...
 
 
-Co-authored-by: Michael Callahan <mcalla242@gmail.com>
-Co-authored-by: Garrett Gregor <garrett.gregor@gmail.com>
+Co-authored-by: Michael Callahan <calforcal@users.noreply.github.com>
+Co-authored-by: Garrett Gregor <118634754+garrettgregor@users.noreply.github.com>
