@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root 'application#home'
-  # get '/', to: 'application#home'
   get '/register', to: 'users#new'
 
-  resources :users, only: %i[new create show]
+  resources :users, only: %i[new create show] do
+    resources :discover, only: %i[index]
+  end
+
 end
