@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create show] do
     resources :discover, only: %i[index]
+    resources :movies, only: %i[index]
   end
 end
