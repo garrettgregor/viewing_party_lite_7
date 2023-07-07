@@ -4,22 +4,17 @@ class MoviesController < ApplicationController
   before_action :find_user
 
   def index
-    if params[:q] == 'top 20rated'
-      conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
-        faraday.params['api_key'] = '8c109ce19b63241d3fe4f0ddc932061b'
-      end
-      response = conn.get('/3/movie/top_rated')
+    @facade = if params[:q] == 'top 20rated'
+                MovieFacade.new
+              else
+                MovieFacade.new(params[:q])
+              end
+  end
 
-    else
-      search = params[:q]
-      conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
-        faraday.params['api_key'] = '8c109ce19b63241d3fe4f0ddc932061b'
-      end
-      response = conn.get("/3/search/movie?query=#{search}")
-
-    end
-    data = JSON.parse(response.body, symbolize_names: true)
-    @movies = data[:results].map { |details| Movie.new(details) }
+  def show
+    @movie_facade = MovieFacade.new(params[:id])
+    @credit_facade = CreditFacade.new(params[:id])
+    @review_facade = ReviewFacade.new(params[:id])
   end
 
   private

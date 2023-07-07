@@ -5,21 +5,27 @@ class Movie
               :title,
               :vote_average,
               :minutes,
+              :runtime,
               :genres,
-              :summary,
-              :cast,
-              :review_count,
-              :authors_info
+              :summary
 
-  def initialize(attributes)
-    @id = attributes[:id]
-    @title = attributes[:title]
-    @vote_average = attributes[:vote_average]
-    @minutes = attributes[:minutes]
-    @genres = attributes[:genre_ids]
-    @summary = attributes[:overview]
-    @cast = attributes[:cast]
-    @review_count = attributes[:review_count]
-    @authors_info = attributes[:authors_info]
+  def initialize(details)
+    @id = details[:id]
+    @title = details[:title]
+    @vote_average = details[:vote_average]
+    @minutes = details[:runtime]
+    @runtime = @minutes.nil? ? 0 : time_conversion(@minutes)
+    @genres = details[:genres].nil? ? nil : get_genres(details[:genres])
+    @summary = details[:overview]
+  end
+
+  def get_genres(genres_details)
+    genres_details.map { |genre| genre[:name] }
+  end
+
+  def time_conversion(time)
+    hours = time / 60
+    minutes = time % 60
+    "#{hours}hr #{minutes}min"
   end
 end
