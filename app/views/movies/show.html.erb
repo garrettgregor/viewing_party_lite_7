@@ -1,24 +1,24 @@
-<h3 class='title'><%= @facade.movie_show.title %></h3>
+<h3 class='title'><%= @movie_facade.movie_details_show.title %></h3>
 <%= button_to 'Discover Page', user_discover_index_path(@user), method: :get %>
-<%= button_to "Create Viewing Party for #{@facade.movie_show.title}", new_user_movie_viewing_party_path(@user, @facade.movie_show.id), method: :get %>
+<%= button_to "Create Viewing Party for #{@movie_facade.movie_details_show.title}", new_user_movie_viewing_party_path(@user, @movie_facade.movie_details_show.id), method: :get %>
 
-<h5 class='vote_average'>Vote: <%= @facade.movie_show.vote_average %></h5>
-<h5 class='runtime'>Runtime: <%= @facade.movie_show.runtime %></h5>
-<h5 class='genre'>Genre: <%= @facade.movie_show.genres.join(', ') %></h5>
+<h5 class='vote_average'>Vote: <%= @movie_facade.movie_details_show.vote_average %></h5>
+<h5 class='runtime'>Runtime: <%= @movie_facade.movie_details_show.runtime %></h5>
+<h5 class='genre'>Genre: <%= @movie_facade.movie_details_show.genres.join(', ') %></h5>
 
 <br>
 
 <h4>Summary</h4></br>
-<p class='summary'><%= @facade.movie_show.summary %></p>
+<p class='summary'><%= @movie_facade.movie_details_show.summary %></p>
 
 <h4 class='cast'>Cast</h4></br>
-<% @facade.movie_show.cast.each do |combo| %>
+<% @credit_facade.movie_credits_show.cast.each do |combo| %>
   <%= "Actor: #{combo[0]}, Character: #{combo[1]}" %></br>
 <% end %>
 
 <div class='review-info'>
-  <h4><%= @facade.movie_show.review_count %> Review(s)</h4>
-  <% @facade.movie_show.review_info.each do |key, value| %>
+  <h4><%= @movie_facade.movie_details_show.review_count %> Review(s)</h4>
+  <% @movie_facade.movie_details_show.review_info.each do |key, value| %>
     <h6 class='author'><%= key %></h6>
     <p class='content'><%= value %></p>
   <% end %>

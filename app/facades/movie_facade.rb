@@ -23,12 +23,11 @@ class MovieFacade
     @movies = json[:results].map { |details| Movie.new(details) }
   end
 
-  def movie_show
+  def movie_details_show
     service = MovieService.new
     details = service.movie_details(@search)
-    credits = service.movie_credits(@search)
     reviews = service.movie_reviews(@search)
 
-    @movie = Movie.new(details, credits, reviews)
+    @movie = Movie.new(details, reviews)
   end
 end

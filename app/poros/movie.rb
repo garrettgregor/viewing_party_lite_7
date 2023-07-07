@@ -8,11 +8,11 @@ class Movie
               :runtime,
               :genres,
               :summary,
-              :cast,
+              # :cast,
               :review_count,
               :review_info
 
-  def initialize(details=nil, credits=nil, reviews=nil)
+  def initialize(details=nil, reviews=nil)
     @id = details[:id]
     @title = details[:title]
     @vote_average = details[:vote_average]
@@ -20,7 +20,7 @@ class Movie
     @runtime = if @minutes == nil then nil else time_conversion(@minutes) end
     @genres = if details == nil then nil else get_genres(details[:genres]) end
     @summary = details[:overview]
-    @cast = if credits == nil then nil else get_credits(credits[:cast]) end
+    # @cast = if credits == nil then nil else get_credits(credits[:cast]) end
     @review_count = if reviews == nil then nil else reviews[:total_results] end
     @review_info = if reviews == nil then nil else get_review_info(reviews[:results]) end
   end
@@ -33,14 +33,14 @@ class Movie
     end
   end
 
-  def get_credits(credits_details=nil)
-    if credits_details == nil
-      nil
-    else
-      cast_list = credits_details.map { |person| [person[:name], person[:character]] }
-      cast_list.slice(0, 10)
-    end
-  end
+  # def get_credits(credits_details=nil)
+  #   if credits_details == nil
+  #     nil
+  #   else
+  #     cast_list = credits_details.map { |person| [person[:name], person[:character]] }
+  #     cast_list.slice(0, 10)
+  #   end
+  # end
 
   def get_review_info(review_details=nil)
     if review_details == nil

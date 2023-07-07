@@ -43,7 +43,8 @@ class MoviesController < ApplicationController
     # response3 = conn3.get("/3/movie/#{params[:id]}/reviews")
     # data3 = JSON.parse(response3.body, symbolize_names: true)
 
-    @facade = MovieFacade.new(params[:id])
+    @movie_facade = MovieFacade.new(params[:id])
+    @credit_facade = CreditFacade.new(params[:id])
   end
 
   private
