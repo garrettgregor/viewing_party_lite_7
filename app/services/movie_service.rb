@@ -2,7 +2,23 @@
 
 class MovieService
   def top_rated_movies
-    get_url('/movie/top_rated?limit=20')
+    get_url('/3/movie/top_rated')
+  end
+
+  def movie_by_search(search)
+    get_url("/3/search/movie?query=#{search}")
+  end
+
+  def movie_details(movie_id)
+    get_url("/3/movie/#{movie_id}")
+  end
+
+  def movie_credits(movie_id)
+    get_url("/3/movie/#{movie_id}/credits?language=en-US")
+  end
+
+  def movie_reviews(movie_id)
+    get_url("/3/movie/#{movie_id}/reviews")
   end
 
   def get_url(url)
