@@ -17,6 +17,12 @@ RSpec.describe '/users/:id/movies/:id', type: :feature do
       expect(current_path).to eq(user_discover_index_path(user1))
     end
 
+    it 'has a button to create a viewing party for the movie', :vcr do
+      click_button('Create Viewing Party for The Godfather')
+
+      expect(current_path).to eq(new_user_movie_viewing_party_path(user1, 238))
+    end
+
     it 'has info about the movie', :vcr do
       expect(page).to have_css('.title')
       expect(page).to have_css('.vote_average')
@@ -24,22 +30,20 @@ RSpec.describe '/users/:id/movies/:id', type: :feature do
       expect(page).to have_css('.genre')
       expect(page).to have_css('.summary')
       expect(page).to have_css('.cast')
-      expect(page).to have_css('.reviews')
+      expect(page).to have_css('.review-info')
     end
 
     it 'has the runtime in hours and minutes', :vcr do
       within '.runtime' do
-        expect(page).to have_content("2 Hours and 55 Minutes")
+        expect(page).to have_content("Runtime: 2hr 55min")
         # use modelo, not the beer
       end
     end
 
     it 'has total number of reviews with author and information', :vcr do
-      expect(page).to have_css('.reviews', count: 5)
-
-      within '.reviews' do
+      within '.review-info' do
         expect(page).to have_css('.author', count: 5)
-        expect(page).to have_css('.information', count: 5)
+        expect(page).to have_css('.content', count: 5)
       end
     end
   end
