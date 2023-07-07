@@ -22,6 +22,8 @@ class MoviesController < ApplicationController
     @movies = data[:results].map { |details| Movie.new(details) }
   end
 
+  def show; end
+
   private
 
   def find_user
