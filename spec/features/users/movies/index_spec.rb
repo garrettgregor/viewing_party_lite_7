@@ -2,31 +2,38 @@
 
 require 'rails_helper'
 
-RSpec.describe '/users/:user_id/movies', type: :feature do
+RSpec.describe '/users/:id/movies', type: :feature do
   describe 'top movies results page' do
     let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com') }
     let!(:user2) { User.create!(name: 'Garrett', email: 'garrett123@gmail.com') }
 
     before(:each) do
-      visit "/users/#{user1.id}/movies?q=top%20rated"
+      visit user_discover_index_path(user1)
+      click_button 'Find Top Rated Movies'
     end
 
-    xit 'has a button to return to the discover page' do
+    it 'has a button to return to the discover page', :vcr do
       click_button('Discover Page')
 
       expect(current_path).to eq(user_discover_index_path(user1))
     end
 
-    xit 'has the title of the movie as a link to the movie details page' do
-
+    it 'has the title of the movie as a link to the movie details page', :vcr do
+      within '.movies' do
+        expect(page).to have_css('.title')
+      end
     end
 
-    xit 'has the vote average of the movie' do
-
+    it 'has the vote average of the movie', :vcr do
+      within '.movies' do
+        expect(page).to have_css('.movie-vote-average')
+      end
     end
 
-    xit 'has only 20 movies listed' do
-
+    it 'has only 20 movies listed', :vcr do
+      within '.movies' do
+        expect(page).to have_css('.title', count: 20)
+      end
     end
   end
 
@@ -36,35 +43,47 @@ RSpec.describe '/users/:user_id/movies', type: :feature do
 
     describe 'happy path' do
       before(:each) do
-        visit "/users/#{user1.id}/movies?q=fight%club"
+        visit user_discover_index_path(user1)
+        fill_in('Search:', with: 'Fight Club')
+        click_button('Find Movies')
       end
 
-      xit 'has a button to return to the discover page' do
+      it 'has a button to return to the discover page', :vcr do
         click_button('Discover Page')
 
         expect(current_path).to eq(user_discover_index_path(user1))
       end
 
-      xit 'has the title of the movie as a link to the movie details page' do
-
+      it 'has the title of the movie as a link to the movie details page', :vcr do
+        within '.movies' do
+          expect(page).to have_css('.title')
+        end
       end
 
-      xit 'has the vote average of the movie' do
-
+      it 'has the vote average of the movie', :vcr do
+        within '.movies' do
+          expect(page).to have_css('.movie-vote-average')
+        end
       end
 
-      xit 'has only 20 movies listed' do
-
+      it 'has only 20 movies listed', :vcr do
+        within '.movies' do
+          expect(page).to have_css('.title', count: 20)
+        end
       end
     end
 
     describe 'edge cases' do
       before(:each) do
-        visit "/users/#{user1.id}/movies?q=batman"
+        visit user_discover_index_path(user1)
+        fill_in('Search:', with: 'Batman')
+        click_button('Find Movies')
       end
 
-      xit 'has only 20 movies listed' do
-
+      it 'has only 20 movies listed', :vcr do
+        within '.movies' do
+          expect(page).to have_css('.title', count: 20)
+        end
       end
     end
   end
