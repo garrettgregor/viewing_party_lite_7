@@ -12,6 +12,6 @@ class Review
   end
 
   def get_review_info(review_details)
-    review_details.map { |review| { review[:author] => review[:content]} }
+    review_details.map { |review| { review[:author] => review[:content] } }
   end
 end

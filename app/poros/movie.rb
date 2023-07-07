@@ -14,8 +14,8 @@ class Movie
     @title = details[:title]
     @vote_average = details[:vote_average]
     @minutes = details[:runtime]
-    @runtime = time_conversion(@minutes)
-    @genres = get_genres(details[:genres])
+    @runtime = @minutes.nil? ? 0 : time_conversion(@minutes)
+    @genres = details[:genres].nil? ? nil : get_genres(details[:genres])
     @summary = details[:overview]
   end
 
@@ -26,6 +26,6 @@ class Movie
   def time_conversion(time)
     hours = time / 60
     minutes = time % 60
-    formatted = "#{hours}hr #{minutes}min"
+    "#{hours}hr #{minutes}min"
   end
 end

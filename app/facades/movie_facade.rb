@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 class MovieFacade
-  def initialize(search=nil)
+  def initialize(search = nil)
     @search = search
   end
 
   def movies_index
     service = MovieService.new
-    
-    if @search.nil?
-      json = service.top_rated_movies
-    else
-      json = service.movie_by_search(@search)
-    end
-    
+
+    json = if @search.nil?
+             service.top_rated_movies
+           else
+             service.movie_by_search(@search)
+           end
+
     @movies = json[:results].map { |details| Movie.new(details) }
   end
 

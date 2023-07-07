@@ -35,7 +35,7 @@ RSpec.describe '/users/:id/movies/:id', type: :feature do
 
     it 'has the runtime in hours and minutes', :vcr do
       within '.runtime' do
-        expect(page).to have_content("Runtime: 2hr 55min")
+        expect(page).to have_content('Runtime: 2hr 55min')
         # use modelo, not the beer
       end
     end
@@ -48,4 +48,3 @@ RSpec.describe '/users/:id/movies/:id', type: :feature do
     end
   end
 end
-

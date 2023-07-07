@@ -6,3 +6,6 @@ Rails/FindBy:
 
 Style/Documentation:
   Enabled: false
+
+Metrics/BlockLength:
+  IgnoredMethods: ['describe', 'context']

@@ -4,11 +4,11 @@ class MoviesController < ApplicationController
   before_action :find_user
 
   def index
-    if params[:q] == 'top 20rated'
-      @facade = MovieFacade.new
-    else
-      @facade = MovieFacade.new(params[:q])
-    end
+    @facade = if params[:q] == 'top 20rated'
+                MovieFacade.new
+              else
+                MovieFacade.new(params[:q])
+              end
   end
 
   def show

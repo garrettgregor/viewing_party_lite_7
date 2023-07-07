@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ReviewFacade
   def initialize(search)
     @search = search
