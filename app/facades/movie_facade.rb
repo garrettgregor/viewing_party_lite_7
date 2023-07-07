@@ -4,13 +4,6 @@ class MovieFacade
   end
 
   def movies_index
-    # conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
-    #   faraday.params['api_key'] = '8c109ce19b63241d3fe4f0ddc932061b'
-    # end
-
-    # response = conn.get('/3/movie/top_rated')
-
-    # data = JSON.parse(response.body, symbolize_names: true)
     service = MovieService.new
     
     if @search.nil?
@@ -19,15 +12,13 @@ class MovieFacade
       json = service.movie_by_search(@search)
     end
     
-
     @movies = json[:results].map { |details| Movie.new(details) }
   end
 
   def movie_details_show
     service = MovieService.new
     details = service.movie_details(@search)
-    reviews = service.movie_reviews(@search)
 
-    @movie = Movie.new(details, reviews)
+    @movie = Movie.new(details)
   end
 end

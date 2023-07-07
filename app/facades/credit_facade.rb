@@ -1,5 +1,5 @@
 class CreditFacade
-  def initialize(search=nil)
+  def initialize(search)
     @search = search
   end
 

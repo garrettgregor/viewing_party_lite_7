@@ -12,14 +12,14 @@
 <p class='summary'><%= @movie_facade.movie_details_show.summary %></p>
 
 <h4 class='cast'>Cast</h4></br>
-<% @credit_facade.movie_credits_show.cast.each do |combo| %>
-  <%= "Actor: #{combo[0]}, Character: #{combo[1]}" %></br>
+<% @credit_facade.movie_credits_show.cast.each do |cast_member| %>
+  <%= "Actor: #{cast_member[0]}, Character: #{cast_member[1]}" %></br>
 <% end %>
 
 <div class='review-info'>
-  <h4><%= @movie_facade.movie_details_show.review_count %> Review(s)</h4>
-  <% @movie_facade.movie_details_show.review_info.each do |key, value| %>
-    <h6 class='author'><%= key %></h6>
-    <p class='content'><%= value %></p>
+  <h4><%= @review_facade.movie_review_show.review_count %> Review(s)</h4>
+  <% @review_facade.movie_review_show.review_info.each do |author, review| %>
+    <h6 class='author'><%= author %></h6>
+    <p class='content'><%= review %></p>
   <% end %>
 </div>
