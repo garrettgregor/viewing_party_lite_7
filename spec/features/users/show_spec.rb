@@ -26,6 +26,11 @@ RSpec.describe '/users/:id', type: :feature do
       )
     }
 
+    UserParty.create!(user_id: user2.id, viewing_party_id: viewing_party_1.id)
+    UserParty.create!(user_id: user3.id, viewing_party_id: viewing_party_1.id)
+    
+    UserParty.create!(user_id: user3.id, viewing_party_id: viewing_party_1.id)
+
     before(:each) do
       visit user_path(user1)
     end
@@ -43,8 +48,43 @@ RSpec.describe '/users/:id', type: :feature do
       end
     end
 
-    it 'has a css class that lists a users viewing parties', :vcr do
+    it 'has a section that lists a users hosted viewing parties', :vcr do
       expect(page).to have_css '.viewing-parties'
+      
+      within '.hosted-parties' do
+        image = find("img[src*='https://image.tmdb.org/t/p/original/3bhkrj58Vtu7enYsRolD1fZdja1.jpg']")
+        expect(page).to have_content(image)
+        expect(page).to have_content('Host: Me')
+        expect(page).to have_content('The Godfather')
+        expect(page).to have_content('Invitees')
+        expect(page).to have_content(user2.name)
+        expect(page).to have_content(user3.name)
+        expect(page).to_not have_content(user3.name)
+      end
+    end
+    
+    it 'has a section fir viewing parties a user was invited to', :vcr do
+      visit user_path(user2)
+      
+      within '.invited-parties' do
+        image = find("img[src*='https://image.tmdb.org/t/p/original/3bhkrj58Vtu7enYsRolD1fZdja1.jpg']")
+        expect(page).to have_content(image)
+        expect(page).to have_content("Host: #{user1.name}")
+        expect(page).to have_content('The Godfather')
+        expect(page).to have_content('Invitees')
+        expect(page).to have_content(user2.name)
+        expect(page).to have_content(user3.name)
+        expect(page).to_not have_content(user3.name)
+
+        image = find("img[src*='https://image.tmdb.org/t/p/original//hVIKyTK13AvOGv7ICmJjK44DTzp.jpg']")
+        expect(page).to have_content(image)
+        expect(page).to have_content("Host: #{user1.name}")
+        expect(page).to have_content('Some Like it Hot')
+        expect(page).to have_content('Invitees')
+        expect(page).to have_content("<b>#{user2.name}</b>")
+        expect(page).to have_content(user1.name)
+        expect(page).to have_content(user3.name)
+      end
     end
   end
 end
