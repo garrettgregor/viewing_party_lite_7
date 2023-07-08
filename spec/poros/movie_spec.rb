@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Movie do
-  it "exists" do
+  it 'exists' do
     attrs = {
       id: 238,
       title: 'The Godfather',
@@ -28,10 +30,10 @@ RSpec.describe Movie do
     expect(movie).to be_a Movie
     expect(movie.id).to eq(238)
     expect(movie.title).to eq('The Godfather')
-    expect(movie.genres).to eq(['Drama', 'Crime'])
+    expect(movie.genres).to eq(%w[Drama Crime])
     expect(movie.runtime).to eq('2hr 55min')
     expect(movie.minutes).to eq(175)
-    expect(movie.poster_path).to eq("/3bhkrj58Vtu7enYsRolD1fZdja1.jpg")
+    expect(movie.poster_path).to eq('/3bhkrj58Vtu7enYsRolD1fZdja1.jpg')
     expect(movie.summary).to eq(summary)
     expect(movie.vote_average).to eq(8.71)
   end

@@ -1,13 +1,14 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Review do
-  it "exists" do
+  it 'exists' do
     attrs = {
       id: 1,
       total_results: 50,
-      results: [{author: 'buzz',
-                 content: 'Such a good movie!'
-                }]
+      results: [{ author: 'buzz',
+                  content: 'Such a good movie!' }]
     }
 
     review = Review.new(attrs)

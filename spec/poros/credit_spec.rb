@@ -1,12 +1,13 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Credit do
-  it "exists" do
+  it 'exists' do
     attrs = {
       id: 1,
-      cast: [{name: 'buzz',
-              character: 'lightyear'
-            }]
+      cast: [{ name: 'buzz',
+               character: 'lightyear' }]
     }
 
     credit = Credit.new(attrs)

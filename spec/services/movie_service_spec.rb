@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe MovieService do
@@ -11,7 +13,7 @@ describe MovieService do
 
         expect(movie_data).to have_key(:title)
         expect(movie_data[:title]).to be_a(String)
- 
+
         expect(movie_data).to have_key(:vote_average)
         expect(movie_data[:vote_average]).to be_a(Float)
       end
@@ -29,7 +31,7 @@ describe MovieService do
 
         expect(movie_data).to have_key(:title)
         expect(movie_data[:title]).to be_a(String)
- 
+
         expect(movie_data).to have_key(:vote_average)
         expect(movie_data[:vote_average]).to be_a(Float)
       end
@@ -45,24 +47,24 @@ describe MovieService do
 
         expect(movie_data).to have_key(:title)
         expect(movie_data[:title]).to be_a(String)
-  
+
         expect(movie_data).to have_key(:vote_average)
         expect(movie_data[:vote_average]).to be_a(Float)
 
         expect(movie_data).to have_key(:runtime)
         expect(movie_data[:runtime]).to be_an(Integer)
-  
+
         expect(movie_data).to have_key(:genres)
         expect(movie_data[:genres]).to be_an(Array)
-  
+
         expect(movie_data).to have_key(:overview)
         expect(movie_data[:overview]).to be_a(String)
-  
+
         expect(movie_data).to have_key(:poster_path)
         expect(movie_data[:poster_path]).to be_a(String)
       end
-    end 
-    
+    end
+
     context '#movie_credits' do
       it 'returns a movie credits', :vcr do
         search = MovieService.new.movie_credits(238)
@@ -93,13 +95,13 @@ describe MovieService do
         expect(movie_data[:total_results]).to be_an(Integer)
 
         expect(movie_data).to have_key(:results)
-        
+
         review_data = movie_data[:results]
         expect(review_data).to be_an(Array)
 
         expect(review_data.first[:author]).to be_a(String)
         expect(review_data.first[:content]).to be_a(String)
       end
-    end 
+    end
   end
 end
