@@ -7,7 +7,8 @@ class Movie
               :minutes,
               :runtime,
               :genres,
-              :summary
+              :summary,
+              :poster_path
 
   def initialize(details)
     @id = details[:id]
@@ -17,6 +18,7 @@ class Movie
     @runtime = @minutes.nil? ? 0 : time_conversion(@minutes)
     @genres = details[:genres].nil? ? nil : get_genres(details[:genres])
     @summary = details[:overview]
+    @poster_path = details[:poster_path]
   end
 
   def get_genres(genres_details)

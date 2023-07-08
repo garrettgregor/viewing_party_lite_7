@@ -27,7 +27,7 @@ class MovieService
   end
 
   def conn
-    Faraday.new(url: 'https://api.themoviedb.org/3') do |faraday|
+    Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
       faraday.params['api_key'] = '8c109ce19b63241d3fe4f0ddc932061b'
     end
   end

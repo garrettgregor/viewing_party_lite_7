@@ -6,7 +6,9 @@
 <br>
 <div class='viewing-parties'>
   <% @user.hosted_parties.each do |party| %>
-    <%= MovieFacade.new(party.movie_id).movie_details_show.title %>
+    <% movie = MovieFacade.new(party.movie_id).movie_details_show %>
+    <%= movie.title %>
+    <img src="https://image.tmdb.org/t/p/original/<%= movie.poster_path %>" width='100' height='200'>
     <br>
   <% end %>
 </div>
