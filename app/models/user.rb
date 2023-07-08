@@ -9,10 +9,6 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   def hosted_parties
-    ViewingParty.where(:host_id == self.id)
-  end
-
-  def hosted_parties_ids
-    hosted_parties.pluck(:movie_id)
+    ViewingParty.where('viewing_parties.host_id = ?', self.id)
   end
 end
