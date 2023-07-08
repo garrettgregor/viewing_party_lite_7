@@ -5,47 +5,55 @@
 </div>
 <br>
 <div class='viewing-parties'>
-  <% @user.hosted_parties.each do |party| %>
-    <% movie = MovieFacade.new(party.movie_id).movie_details_show %>
-    <img src="https://image.tmdb.org/t/p/original/<%= movie.poster_path %>" width='100' height='200'>
-    <br>
-    <%= movie.title %>
-    <br>
-    <%= party.start_date.to_fs(:long) %>
-    <br>
-    <%= party.start_time.strftime("%r") %>
-    <h4>Hosting</h4>
-    <h4>Host: Me</h4>
-    <h5>Invitees</h5>
-    <ul>
-      <% party.users.each do |invitee| %>
-        <li><%= invitee.name %></li>
-      <% end %>
-    </ul>
-    <br>
-  <% end %>
+  <div class='hosted-parties'>
+    <% @user.hosted_parties.each do |party| %>
+      <div id='hosted-party-<%= party.id %>'>
+        <% movie = MovieFacade.new(party.movie_id).movie_details_show %>
+        <img class='poster' src="https://image.tmdb.org/t/p/original/<%= movie.poster_path %>" width='100' height='200'>
+        <br>
+        <%= movie.title %>
+        <br>
+        <%= party.start_date.to_fs(:long) %>
+        <br>
+        <%= party.start_time.strftime("%r") %>
+        <h4>Hosting</h4>
+        <h4>Host: Me</h4>
+        <h5>Invitees</h5>
+        <ul>
+          <% party.users.each do |invitee| %>
+            <li><%= invitee.name %></li>
+          <% end %>
+        </ul>
+        <br>
+      </div>
+    <% end %>
+  </div>
 
-  <% @user.viewing_parties.each do |party| %>
-    <% movie = MovieFacade.new(party.movie_id).movie_details_show %>
-    <img src="https://image.tmdb.org/t/p/original/<%= movie.poster_path %>" width='100' height='200'>
-    <br>
-    <%= movie.title %>
-    <br>
-    <%= party.start_date.to_fs(:long) %>
-    <br>
-    <%= party.start_time.strftime("%r") %>
-    <h4>Invited</h4>
-    <h4>Host: <%= party.host_name %></h4>
-    <h5>Invitees</h5>
-    <ul>
-      <% party.users.each do |invitee| %>
-        <% if invitee.name == @user.name %>
-          <li><strong><%= invitee.name %></strong></li>
-        <% else %>
-          <li><%= invitee.name %></li>
-        <% end %>
-      <% end %>
-    </ul>
-    <br>
-  <% end %>
+  <div class='invited-parties'>
+    <% @user.viewing_parties.each do |party| %>
+      <div id='invited-party-<%= party.id %>'>
+        <% movie = MovieFacade.new(party.movie_id).movie_details_show %>
+        <img class='poster' src="https://image.tmdb.org/t/p/original/<%= movie.poster_path %>" width='100' height='200'>
+        <br>
+        <%= movie.title %>
+        <br>
+        <%= party.start_date.to_fs(:long) %>
+        <br>
+        <%= party.start_time.strftime("%r") %>
+        <h4>Invited</h4>
+        <h4>Host: <%= party.host_name %></h4>
+        <h5>Invitees</h5>
+        <ul>
+          <% party.users.each do |invitee| %>
+            <% if invitee.name == @user.name %>
+              <li class='self-invited'><strong><%= invitee.name %></strong></li>
+            <% else %>
+              <li><%= invitee.name %></li>
+            <% end %>
+          <% end %>
+        </ul>
+        <br>
+      </div>
+    <% end %>
+  </div>
 </div>

@@ -46,15 +46,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 ec4d04f2befcd6652834fd368a8b671e.cloudfront.net (CloudFront)
+      - 1.1 23d87d8c2ce38e34462e6c134d187eea.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - TF7hTRf329G84cPEfYLGy6glG1DJ-ynMli8NuGbmMi0jDSnzCT7ljQ==
+      - tpxBxogFUM1RWnPVW6b3EhJ2nzAQZ1MF93sKE2U_wgfpCcZMtr_J3Q==
       Age:
-      - '19336'
+      - '24193'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -67,7 +67,7 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.71,"vote_count":18189}'
-  recorded_at: Sat, 08 Jul 2023 21:11:33 GMT
+  recorded_at: Sat, 08 Jul 2023 22:32:30 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/239?api_key=<TMDB_API_KEY>
@@ -114,15 +114,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 23241b9c368643949e3bb1a1ba4e97c2.cloudfront.net (CloudFront)
+      - 1.1 48a6ccbb0ddb052ab512a3422295bd38.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - naxln2RoIBIC7ttzJvavCCvskOhbCipx6o0KgS1rb5mLx5Zhkc1pKw==
+      - nBG9Oq-BJvYJ8EryeQT3fgOpVWIRs1vzUCKLm7FRID59TU7MXgeT8w==
       Age:
-      - '2298'
+      - '7155'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/5zTwAcnI3zCJ0mucPPnoBtkSWEV.jpg","belongs_to_collection":null,"budget":2883848,"genres":[{"id":35,"name":"Comedy"},{"id":10402,"name":"Music"},{"id":10749,"name":"Romance"},{"id":80,"name":"Crime"}],"homepage":"","id":239,"imdb_id":"tt0053291","original_language":"en","original_title":"Some
@@ -138,5 +138,73 @@ http_interactions:
         States of America"}],"release_date":"1959-03-19","revenue":25000000,"runtime":122,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Marilyn
         Monroe and her bosom companions... Tony Curtis... Jack Lemmon...","title":"Some
         Like It Hot","video":false,"vote_average":8.112,"vote_count":3075}'
-  recorded_at: Sat, 08 Jul 2023 21:11:33 GMT
+  recorded_at: Sat, 08 Jul 2023 22:32:30 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=<TMDB_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 08 Jul 2023 15:49:17 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=26389
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '17931'
+      X-Memc-Expires:
+      - '5819'
+      Etag:
+      - W/"4e64c67cc67267ae1afc2087b799df87"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 9c7e5857d78c5dc89042979317de5842.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 4yaf_Z-de38MdpkVcG5yjIYtqYFfjmIdBxZCXDz9vbFhi_Wo3AhGxw==
+      Age:
+      - '24193'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/9Baumh5J9N1nJUYzNkm0xsgjpwY.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":118.143,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.71,"vote_count":18189}'
+  recorded_at: Sat, 08 Jul 2023 22:32:30 GMT
 recorded_with: VCR 6.2.0

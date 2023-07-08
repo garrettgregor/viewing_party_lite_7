@@ -9,3 +9,6 @@ Style/Documentation:
 
 Metrics/BlockLength:
   IgnoredMethods: ['describe', 'context']
+
+Naming/VariableNumber:
+  IgnoredMethods: ['describe', 'context', 'it']
