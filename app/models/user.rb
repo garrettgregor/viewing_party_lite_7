@@ -11,4 +11,8 @@ class User < ApplicationRecord
   def hosted_parties
     ViewingParty.where(:host_id == self.id)
   end
+
+  def hosted_parties_ids
+    hosted_parties.pluck(:movie_id)
+  end
 end

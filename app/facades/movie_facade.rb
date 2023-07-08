@@ -23,4 +23,13 @@ class MovieFacade
 
     @movie = Movie.new(details)
   end
+
+  def user_hosted_parties
+    service = MovieService.new
+    details = @search.map do |movie_id|
+      service.movie_details(movie_id)
+    end
+
+    @movies = details.map { |movie_details| Movie.new(movie_details) }
+  end
 end

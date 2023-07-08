@@ -6,12 +6,7 @@
 <br>
 <div class='viewing-parties'>
   <% @user.hosted_parties.each do |party| %>
-    <div class='party-<%= party.id %>'>
-      <h4><%= party.id %></h4>
-      <ul><% party.users.each do |user| %>
-        <li><%= user.name %></li>
-        <% end %>
-      </ul>
-    </div>
+    <%= MovieFacade.new(party.movie_id).movie_details_show.title %>
+    <br>
   <% end %>
 </div>
