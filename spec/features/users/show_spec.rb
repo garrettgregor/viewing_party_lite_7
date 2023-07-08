@@ -8,17 +8,21 @@ RSpec.describe '/users/:id', type: :feature do
     let!(:user2) { User.create!(name: 'Garrett', email: 'garrett123@gmail.com') }
     let!(:user3) { User.create!(name: 'Shannon', email: 'shannon123@gmail.com') }
 
-    let!(:viewing_party_1) { ViewingParty.create!(duration: 175,
-                                                  start_date: 'Wed, 07 Aug 2024',
-                                                  start_time: 'Sat, 01 Jan 2000 19:00:00.000000000 UTC +00:00',
-                                                  movie_id: 238,
-                                                  host_id: user1.id) }
+    ViewingParty.create!(
+      duration: 175,
+      start_date: 'Wed, 07 Aug 2024',
+      start_time: 'Sat, 01 Jan 2000 19:00:00.000000000 UTC +00:00',
+      movie_id: 238,
+      host_id: user1.id
+    )
 
-    let!(:viewing_party_2) { ViewingParty.create!(duration: 122,
-                                                  start_date: 'Wed, 08 Aug 2024',
-                                                  start_time: 'Sat, 01 Jan 2000 19:00:00.000000000 UTC +00:00',
-                                                  movie_id: 239,
-                                                  host_id: user1.id) }
+    ViewingParty.create!(
+      duration: 122,
+      start_date: 'Wed, 08 Aug 2024',
+      start_time: 'Sat, 01 Jan 2000 19:00:00.000000000 UTC +00:00',
+      movie_id: 239,
+      host_id: user1.id
+    )
 
     before(:each) do
       visit user_path(user1)

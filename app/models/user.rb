@@ -9,6 +9,6 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
 
   def hosted_parties
-    ViewingParty.where('viewing_parties.host_id = ?', self.id)
+    ViewingParty.where('viewing_parties.host_id = ?', id)
   end
 end

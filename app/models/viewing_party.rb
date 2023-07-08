@@ -5,6 +5,6 @@ class ViewingParty < ApplicationRecord
   has_many :users, through: :user_parties
 
   def host_name
-    User.find(self.host_id).name
+    User.find(:host_id).name
   end
 end

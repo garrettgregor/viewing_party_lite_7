@@ -72,10 +72,10 @@ end
 group :test do
   gem 'capybara'
   gem 'launchy'
+  gem 'orderly'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'vcr'
   gem 'webmock'
-  gem 'orderly'
 end
