@@ -1,0 +1,27 @@
+<h2>Create a Movie Party for <%= @movie_facade.movie_details_show.title %></h2>
+<br>
+<%= render partial: 'shared/nav' %>
+<br>
+<div class='viewing-party-form'>
+  <h3>Viewing Party Details</h3>
+  <%= form_with url: user_movie_viewing_parties_path(@user, @movie_facade.movie_details_show.id), method: :post, local: true do |f| %>
+    <%= f.label "Movie Title: #{@movie_facade.movie_details_show.title}" %>
+    <br>
+    <%= f.label 'Duration' %>
+    <%= f.number_field :duration, value: @movie_facade.movie_details_show.minutes, in: @movie_facade.movie_details_show.minutes..1_000 %>
+    <br>
+    <%= f.date_field :start_date %>
+    <br>
+    <%= f.time_field :start_time %>
+    <%= f.hidden_field :host_id, value: @user.id %>
+    <br>
+    <% @users.each do |user| %>
+      <%= check_box_tag 'user_ids[]', user.id %>
+      <%= label_tag "#{user.name} (#{user.email})" %>
+      <br>
+    <% end %>
+    <br>
+    <%= f.submit 'Create Party' %>
+  <% end %>
+</div>
+

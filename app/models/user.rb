@@ -7,4 +7,8 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
   validates :email, uniqueness: true
+
+  def hosted_parties
+    ViewingParty.where('viewing_parties.host_id = ?', id)
+  end
 end
