@@ -36,8 +36,5 @@ RSpec.describe '/users/:id/movies/viewing_party/new', type: :feature do
         expect(current_path).to eq(user_path(user1))
       end
     end
-
-    xit 'throws an error if viewing party is created with duration less than runtime', :vcr do
-    end
   end
 end
