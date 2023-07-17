@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe '/users/:id/movies', type: :feature do
   describe 'top movies results page' do
-    let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com') }
-    let!(:user2) { User.create!(name: 'Garrett', email: 'garrett123@gmail.com') }
+let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com', password: 'test') }
+    let!(:user2) { User.create!(name: 'Garrett', email: 'garrett123@gmail.com', password: 'test') }
 
     before(:each) do
       visit user_discover_index_path(user1)
@@ -38,8 +38,8 @@ RSpec.describe '/users/:id/movies', type: :feature do
   end
 
   describe 'movie search results page' do
-    let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com') }
-    let!(:user2) { User.create!(name: 'Garrett', email: 'garrett123@gmail.com') }
+let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com', password: 'test') }
+    let!(:user2) { User.create!(name: 'Garrett', email: 'garrett123@gmail.com', password: 'test') }
 
     describe 'happy path' do
       before(:each) do

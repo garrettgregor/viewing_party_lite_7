@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe '/', type: :feature do
   describe 'landing page' do
-    let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com') }
-    let!(:user2) { User.create!(name: 'Garrett', email: 'garrett123@gmail.com') }
+let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com', password: 'test') }
+    let!(:user2) { User.create!(name: 'Garrett', email: 'garrett123@gmail.com', password: 'test') }
 
     before(:each) do
       visit '/'

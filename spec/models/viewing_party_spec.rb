@@ -9,9 +9,9 @@ RSpec.describe ViewingParty, type: :model do
   end
 
   describe 'instance methods' do
-    let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com') }
-    let!(:user2) { User.create!(name: 'Garrett', email: 'garrett123@gmail.com') }
-    let!(:user3) { User.create!(name: 'Shannon', email: 'shannon123@gmail.com') }
+    let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com', password: 'test') }
+    let!(:user2) { User.create!(name: 'Garrett', email: 'garrett123@gmail.com', password: 'test') }
+    let!(:user3) { User.create!(name: 'Shannon', email: 'shannon123@gmail.com', password: 'test') }
 
     let!(:viewing_party_1) do
       ViewingParty.create!(
