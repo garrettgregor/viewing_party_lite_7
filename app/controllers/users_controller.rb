@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   end
 
   def create
+    user = user_params
+    user[:name] = user[:name].downcase
     new_user = User.new(user_params)
     if new_user.save
       redirect_to user_path(new_user)
@@ -23,6 +25,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
