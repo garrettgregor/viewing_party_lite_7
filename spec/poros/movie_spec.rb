@@ -8,14 +8,8 @@ RSpec.describe Movie do
       id: 238,
       title: 'The Godfather',
       genres: [
-        {
-          id: 18,
-          name: 'Drama'
-        },
-        {
-          id: 80,
-          name: 'Crime'
-        }
+        { id: 18, name: 'Drama' },
+        { id: 80, name: 'Crime' }
       ],
       runtime: 175,
       poster_path: '/3bhkrj58Vtu7enYsRolD1fZdja1.jpg',

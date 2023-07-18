@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe '/users/:id/movies/viewing_party/new', type: :feature do
   describe 'create new viewing party' do
-let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com', password: 'test') }
+    let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com', password: 'test') }
     let!(:user2) { User.create!(name: 'Garrett', email: 'garrett123@gmail.com', password: 'test') }
     let!(:user3) { User.create!(name: 'Shannon', email: 'shannon123@gmail.com', password: 'test') }
 

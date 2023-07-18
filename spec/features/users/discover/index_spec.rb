@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe '/users/:id/discover', type: :feature do
   describe 'discover page' do
-let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com', password: 'test') }
+    let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com', password: 'test') }
     let!(:user2) { User.create!(name: 'Garrett', email: 'garrett123@gmail.com', password: 'test') }
 
     before(:each) do
