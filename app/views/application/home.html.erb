@@ -3,11 +3,10 @@
   <%= link_to 'Log In', login_path %>
 <% else %>
   <%= link_to 'Log Out', logout_path %>
+  <div class="existing-users">
+    <h3>Existing Users</h3>
+    <% @users.each do |user| %>
+      <%= user.email %>
+    <% end %>
+  </div>
 <% end %>
-
-<div class="existing-users">
-  <h3>Existing Users</h3>
-  <% @users.each do |user| %>
-    <%= link_to "#{user.email}", user_path(user) %>
-  <% end %>
-</div>
