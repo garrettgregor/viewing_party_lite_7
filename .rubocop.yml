@@ -19,4 +19,4 @@ Naming/VariableNumber:
     - 'spec/**/*'
 
 Metrics/AbcSize:
-  IgnoredMethods: ['login']
+  IgnoredMethods: ['login', 'create']
