@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe '/register', type: :feature do
   describe 'registration page' do
-let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com', password: 'test') }
+    let!(:user1) { User.create!(name: 'Michael', email: 'mcalla123@gmail.com', password: 'test') }
     let!(:user2) { User.create!(name: 'Garrett', email: 'garrett123@gmail.com', password: 'test') }
 
     before(:each) do
