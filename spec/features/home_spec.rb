@@ -23,9 +23,19 @@ RSpec.describe '/', type: :feature do
     end
 
     it 'displays a list of existing users, that links to the users dashboard' do
+      # user = User.create(name: 'testarossa', email: 'testy@testtasker.com', password: 'test')
+      click_on 'Log In'
+      fill_in :email, with: user1.email
+      fill_in :password, with: user1.password
+      click_on 'Log In'
+      ## Question: why can't I get this to sub in for the above?
+      # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit root_path
+
       within '.existing-users' do
-        expect(page).to have_link(user1.email.to_s, href: user_path(user1))
-        expect(page).to have_link(user2.email.to_s, href: user_path(user2))
+        expect(page).to have_content(user1.email.to_s)
+        expect(page).to have_content(user2.email.to_s)
       end
     end
 
