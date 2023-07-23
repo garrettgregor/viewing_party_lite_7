@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#login_form'
   post '/login', to: 'sessions#login'
   get '/exit', to: 'sessions#logout', as: :logout
+  get '/dashboard', to: 'users#show'
 
+  resources :discover, only: %i[index]
   resources :users, only: %i[new create show] do
     resources :discover, only: %i[index]
     resources :movies, only: %i[index show] do

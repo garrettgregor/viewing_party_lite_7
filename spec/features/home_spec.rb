@@ -29,7 +29,7 @@ RSpec.describe '/', type: :feature do
       fill_in :password, with: user1.password
       click_on 'Log In'
       ## Question: why can't I get this to sub in for the above?
-      # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
       visit root_path
 

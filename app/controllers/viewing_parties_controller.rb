@@ -10,7 +10,6 @@ class ViewingPartiesController < ApplicationController
 
   def create
     viewing_party = ViewingParty.create!(viewing_party_params)
-    # refactor this to move to model or facade?
     params[:user_ids].each do |id|
       UserParty.create!(
         user_id: id,

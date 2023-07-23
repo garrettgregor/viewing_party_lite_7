@@ -20,8 +20,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @movie_facade = MovieFacade.new(params[:id])
+    if current_user
+      @user = current_user
+      @movie_facade = MovieFacade.new(params[:id])
+    else
+      redirect_to root_path
+      flash[:alert] = 'You must be logged in to view that page'
+    end
   end
 
   private

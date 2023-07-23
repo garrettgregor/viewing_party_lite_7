@@ -32,6 +32,15 @@ RSpec.describe '/users/:id', type: :feature do
 
     let!(:party_2) { UserParty.create!(user_id: user3.id, viewing_party_id: viewing_party_2.id) }
 
+    before(:each) do
+      visit root_path
+
+      click_on 'Log In'
+      fill_in :email, with: user1.email
+      fill_in :password, with: user1.password
+      click_on 'Log In'
+    end
+
     it 'displays a users name at the top of the page', :vcr do
       visit user_path(user1)
 
@@ -55,7 +64,7 @@ RSpec.describe '/users/:id', type: :feature do
       expect(page).to have_css '.viewing-parties'
 
       within "#hosted-party-#{viewing_party_1.id}" do
-        ## Better way to know if specific image is coming through?
+        ## Question: is there a better way to know if specific image is coming through?
         # image = page.find("img[src='https://image.tmdb.org/t/p/original/3bhkrj58Vtu7enYsRolD1fZdja1.jpg']")
         # ^ doesn't work
         expect(page).to have_css('.poster')
@@ -69,6 +78,14 @@ RSpec.describe '/users/:id', type: :feature do
     end
 
     it 'has a section for viewing parties a user was invited to', :vcr do
+      visit root_path
+
+      click_on 'Log Out'
+      click_on 'Log In'
+      fill_in :email, with: user2.email
+      fill_in :password, with: user2.password
+      click_on 'Log In'
+
       visit user_path(user2)
 
       within "#invited-party-#{viewing_party_1.id}" do
@@ -78,10 +95,19 @@ RSpec.describe '/users/:id', type: :feature do
         expect(page).to have_content('Invitees')
         expect(page).to_not have_content(user3.name)
         expect(page).to have_css('.self-invited')
+        ## Question: how can we check if certain text is bolded?
         # expect(page).to have_content("<strong>#{user2.name}</strong>")
         # ^ can't find way to specify bold text
         expect(page).to have_content(user2.name)
       end
+
+      visit root_path
+
+      click_on 'Log Out'
+      click_on 'Log In'
+      fill_in :email, with: user3.email
+      fill_in :password, with: user3.password
+      click_on 'Log In'
 
       visit user_path(user3)
 
@@ -92,8 +118,6 @@ RSpec.describe '/users/:id', type: :feature do
         expect(page).to have_content('Invitees')
         expect(page).to_not have_content(user2.name)
         expect(page).to have_css('.self-invited')
-        # expect(page).to have_content("<strong>#{user3.name}</stroing>")
-        # ^ can't find way to specify bold text
       end
     end
   end

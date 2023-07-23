@@ -24,50 +24,50 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Sat, 08 Jul 2023 15:49:17 GMT
       Server:
       - openresty
-      Cache-Control:
-      - public, max-age=26389
       X-Memc:
       - HIT
       X-Memc-Key:
       - 9d48db5c244b9c3e3d162ef155211175
       X-Memc-Age:
-      - '17931'
+      - '11317'
       X-Memc-Expires:
-      - '5819'
+      - '15351'
+      Date:
+      - Wed, 19 Jul 2023 02:16:46 GMT
+      Cache-Control:
+      - public, max-age=27642
       Etag:
-      - W/"4e64c67cc67267ae1afc2087b799df87"
+      - W/"f56e44a02ffaf8971059a4cf6da02895"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 28d79637e27f11e3ab19a9515e273a5a.cloudfront.net (CloudFront)
+      - 1.1 ec4d04f2befcd6652834fd368a8b671e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - UYfytbcpr8zCyonbGYiwM3tAhWW9wa87X6v0sbepaNF3Ckh8bS2Erw==
+      - CPDXWktq3RH3PjfHNBJsbF65WXuuIGU1W8a_Iztauaobjfw-zQBpvw==
       Age:
-      - '24193'
+      - '512'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
-        Godfather Collection","poster_path":"/9Baumh5J9N1nJUYzNkm0xsgjpwY.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather Collection","poster_path":"/e5iVtjkjM30znn86JsvkBYtvEo1.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
         Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
         fictional Italian-American Corleone crime family. When organized crime family
         patriarch, Vito Corleone barely survives an attempt on his life, his youngest
         son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":118.143,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        of bloody revenge.","popularity":128.804,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.71,"vote_count":18189}'
-  recorded_at: Sat, 08 Jul 2023 22:32:30 GMT
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.711,"vote_count":18244}'
+  recorded_at: Wed, 19 Jul 2023 02:25:18 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/239?api_key=<TMDB_API_KEY>
@@ -93,36 +93,36 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sat, 08 Jul 2023 20:33:15 GMT
+      - Tue, 18 Jul 2023 23:29:57 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=25245
+      - public, max-age=27931
       X-Memc:
       - HIT
       X-Memc-Key:
       - d4b7ee17e759643759854c4968846943
       X-Memc-Age:
-      - '1194'
+      - '15711'
       X-Memc-Expires:
-      - '21984'
+      - '9167'
       Etag:
-      - W/"174ed4d291aeb36b80641cd2b7de488b"
+      - W/"abdfcc5b9953484a9cb0ae2eaed66259"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 6c02603f677dd5669f8ab3b41062340e.cloudfront.net (CloudFront)
+      - 1.1 e7ff4a714a3b1f464db9c76ee954a564.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - gOC_6e0MjSQMM3sgkZt9GaFKEe1CaWV5AGm1vBqozjcDC8XjnDs3uA==
+      - QoaLuBBNg6SU1qGIY4fHrX_eWcjh-ko3idzF_7PA1b3txUbsB1ihDA==
       Age:
-      - '7155'
+      - '10521'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/5zTwAcnI3zCJ0mucPPnoBtkSWEV.jpg","belongs_to_collection":null,"budget":2883848,"genres":[{"id":35,"name":"Comedy"},{"id":10402,"name":"Music"},{"id":10749,"name":"Romance"},{"id":80,"name":"Crime"}],"homepage":"","id":239,"imdb_id":"tt0053291","original_language":"en","original_title":"Some
@@ -131,12 +131,151 @@ http_interactions:
         is to join an all-girl band as they leave on a tour. To make their getaway
         they must first disguise themselves as women, then keep their identities secret
         and deal with the problems this brings - such as an attractive bandmate and
-        a very determined suitor.","popularity":30.396,"poster_path":"/hVIKyTK13AvOGv7ICmJjK44DTzp.jpg","production_companies":[{"id":219,"logo_path":null,"name":"The
+        a very determined suitor.","popularity":30.281,"poster_path":"/hVIKyTK13AvOGv7ICmJjK44DTzp.jpg","production_companies":[{"id":219,"logo_path":null,"name":"The
         Mirisch Company","origin_country":"US"},{"id":11982,"logo_path":null,"name":"Ashton
         Productions","origin_country":""},{"id":60,"logo_path":"/1SEj4nyG3JPBSKBbFhtdcHRaIF9.png","name":"United
         Artists","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1959-03-19","revenue":25000000,"runtime":122,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Marilyn
         Monroe and her bosom companions... Tony Curtis... Jack Lemmon...","title":"Some
-        Like It Hot","video":false,"vote_average":8.112,"vote_count":3075}'
-  recorded_at: Sat, 08 Jul 2023 22:32:30 GMT
+        Like It Hot","video":false,"vote_average":8.112,"vote_count":3084}'
+  recorded_at: Wed, 19 Jul 2023 02:25:18 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=<TMDB_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d48db5c244b9c3e3d162ef155211175
+      X-Memc-Age:
+      - '11317'
+      X-Memc-Expires:
+      - '15351'
+      Date:
+      - Wed, 19 Jul 2023 02:16:46 GMT
+      Cache-Control:
+      - public, max-age=27642
+      Etag:
+      - W/"f56e44a02ffaf8971059a4cf6da02895"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e4ca364cc5959e3bf697ae231c5b56b0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - FmFXvDQFbbsyIocaSV2YImeXhBTOV99Gxb3dad0KenXWyJqB5DL_WQ==
+      Age:
+      - '512'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tmU7GeKVybMWFButWEGl2M4GeiP.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/e5iVtjkjM30znn86JsvkBYtvEo1.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":128.804,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.711,"vote_count":18244}'
+  recorded_at: Wed, 19 Jul 2023 02:25:18 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/239?api_key=<TMDB_API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 18 Jul 2023 23:29:57 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=27931
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - d4b7ee17e759643759854c4968846943
+      X-Memc-Age:
+      - '15711'
+      X-Memc-Expires:
+      - '9167'
+      Etag:
+      - W/"abdfcc5b9953484a9cb0ae2eaed66259"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 48a6ccbb0ddb052ab512a3422295bd38.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - JjLe8hp0oGZUIxzKHnbeffRW25xFpAHJvQ_i0AbwpYq_Tgg60T0kiA==
+      Age:
+      - '10521'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/5zTwAcnI3zCJ0mucPPnoBtkSWEV.jpg","belongs_to_collection":null,"budget":2883848,"genres":[{"id":35,"name":"Comedy"},{"id":10402,"name":"Music"},{"id":10749,"name":"Romance"},{"id":80,"name":"Crime"}],"homepage":"","id":239,"imdb_id":"tt0053291","original_language":"en","original_title":"Some
+        Like It Hot","overview":"Two musicians witness a mob hit and struggle to find
+        a way out of the city before they are found by the gangsters. Their only opportunity
+        is to join an all-girl band as they leave on a tour. To make their getaway
+        they must first disguise themselves as women, then keep their identities secret
+        and deal with the problems this brings - such as an attractive bandmate and
+        a very determined suitor.","popularity":30.281,"poster_path":"/hVIKyTK13AvOGv7ICmJjK44DTzp.jpg","production_companies":[{"id":219,"logo_path":null,"name":"The
+        Mirisch Company","origin_country":"US"},{"id":11982,"logo_path":null,"name":"Ashton
+        Productions","origin_country":""},{"id":60,"logo_path":"/1SEj4nyG3JPBSKBbFhtdcHRaIF9.png","name":"United
+        Artists","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1959-03-19","revenue":25000000,"runtime":122,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Marilyn
+        Monroe and her bosom companions... Tony Curtis... Jack Lemmon...","title":"Some
+        Like It Hot","video":false,"vote_average":8.112,"vote_count":3084}'
+  recorded_at: Wed, 19 Jul 2023 02:25:18 GMT
 recorded_with: VCR 6.2.0
