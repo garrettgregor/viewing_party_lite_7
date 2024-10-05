@@ -35,3 +35,6 @@
 
 # Ignore API Key
 /config/application.yml
+
+# Ignore Jetbrains
+.idea
